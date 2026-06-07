@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrRuby.ai — Medical Disclaimer & Terms of Use</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --off: #f5f5f5;
+  --red: #d0021b;
+  --red-lt: #fdf0f2;
+  --muted: #888;
+  --border: #e0e0e0;
+  --text: #333;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--off); color: var(--text);
+  font-size: 16px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  background: var(--black); padding: 0 60px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 20px; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+.nav-logo span { color: var(--red); }
+.nav-home { font-size: 14px; color: var(--muted); text-decoration: none; }
+.nav-home:hover { color: var(--white); }
+
+/* HEADER */
+.doc-header {
+  background: var(--white);
+  border-bottom: 3px solid var(--red);
+  padding: 56px 60px 48px;
+}
+.doc-header-inner { max-width: 760px; }
+.doc-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); background: var(--red-lt);
+  padding: 5px 14px; border-radius: 4px; margin-bottom: 20px;
+}
+.doc-header h1 {
+  font-size: 36px; font-weight: 700; letter-spacing: -1px;
+  color: var(--black); margin-bottom: 12px; line-height: 1.15;
+}
+.doc-header p { font-size: 16px; color: var(--muted); }
+
+/* EMERGENCY BANNER */
+.emergency {
+  background: var(--black); border-left: 4px solid var(--red);
+  margin: 40px 60px 0; border-radius: 0 8px 8px 0;
+  padding: 20px 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.emergency-icon { font-size: 24px; flex-shrink: 0; }
+.emergency p { font-size: 15px; color: var(--white); line-height: 1.6; }
+.emergency strong { color: var(--red); }
+
+/* CONTENT */
+.doc-body { max-width: 760px; margin: 0 auto; padding: 48px 60px 80px; }
+
+.section-block { margin-bottom: 48px; }
+.section-num {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 8px;
+}
+.section-block h2 {
+  font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+  color: var(--black); margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.section-block p { font-size: 15px; color: var(--text); margin-bottom: 14px; line-height: 1.75; }
+.section-block p:last-child { margin-bottom: 0; }
+.section-block ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.section-block ul li {
+  font-size: 15px; color: var(--text); line-height: 1.65;
+  padding-left: 20px; position: relative;
+}
+.section-block ul li::before {
+  content: '—'; position: absolute; left: 0; color: var(--red); font-weight: 700;
+}
+
+/* KEY BOUNDARIES BOX */
+.boundary-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin: 24px 0;
+}
+.boundary-card {
+  background: var(--white); padding: 24px;
+  border-top: 3px solid var(--border);
+}
+.boundary-card.not { border-top-color: var(--red); }
+.boundary-card.yes { border-top-color: #1a7a45; }
+.boundary-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.not .boundary-label { color: var(--red); }
+.yes .boundary-label { color: #1a7a45; }
+.boundary-card ul { gap: 8px; }
+.boundary-card ul li { font-size: 14px; padding-left: 18px; }
+.not ul li::before { color: var(--red); content: '✗'; }
+.yes ul li::before { color: #1a7a45; content: '✓'; }
+
+/* LANGUAGE EXAMPLES */
+.lang-examples { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.lang-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.lang-no, .lang-yes {
+  padding: 14px 18px; font-size: 14px; line-height: 1.6; border-radius: 0;
+}
+.lang-no { background: #fff5f5; border-left: 3px solid var(--red); color: #7a0010; }
+.lang-yes { background: #f0faf4; border-left: 3px solid #1a7a45; color: #0d4a25; }
+.lang-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 6px; display: block;
+}
+.lang-no .lang-tag { color: var(--red); }
+.lang-yes .lang-tag { color: #1a7a45; }
+
+/* SIGNATURE BLOCK */
+.sig-block {
+  background: var(--white); border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+  padding: 32px; margin-top: 48px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.sig-left p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.sig-left p strong { color: var(--black); }
+.sig-date {
+  font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); text-align: right; flex-shrink: 0;
+}
+
+/* FOOTER */
+footer {
+  background: var(--black); color: #555; padding: 32px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; flex-wrap: wrap; gap: 12px;
+}
+.footer-logo { font-weight: 700; color: var(--white); }
+.footer-logo span { color: var(--red); }
+
+@media (max-width: 768px) {
+  nav, .doc-header, .doc-body, footer { padding-left: 24px; padding-right: 24px; }
+  .emergency { margin: 32px 24px 0; }
+  .boundary-grid, .lang-row { grid-template-columns: 1fr; }
+  .doc-header h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dr<span>Ruby</span>.ai</a>
+  <a href="index.html" class="nav-home">← Back to DrRuby.ai</a>
+</nav>
+
+<div class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-tag">Legal · Medical Disclaimer</div>
+    <h1>Medical Disclaimer &amp; Terms of Use</h1>
+    <p>Last updated: June 2026 · Please read this carefully before using DrRuby.ai</p>
+  </div>
+</div>
+
+<div class="emergency">
+  <div class="emergency-icon">🚨</div>
+  <p><strong>Medical Emergency:</strong> If you are experiencing a medical emergency, stop and call <strong>911</strong> immediately. DrRuby is not equipped to respond to medical emergencies and is not a substitute for emergency medical services.</p>
+</div>
+
+<div class="doc-body">
+
+  <!-- 1. NOT A MEDICAL DEVICE -->
+  <div class="section-block">
+    <div class="section-num">Section 01</div>
+    <h2>DrRuby is not a medical device</h2>
+    <p>DrRuby.ai is a <strong>wellness tracking and coaching platform</strong>. Our tools — including dermatoscope imaging, longitudinal data tracking, and AI-assisted coaching — are designed to support your personal health awareness and lifestyle decisions.</p>
+    <p>DrRuby is <strong>not</strong> a medical device as defined by the U.S. Food and Drug Administration (FDA). It is not designed, intended, or cleared for the diagnosis, cure, mitigation, treatment, or prevention of disease or any medical condition.</p>
+  </div>
+
+  <!-- 2. NOT MEDICAL ADVICE -->
+  <div class="section-block">
+    <div class="section-num">Section 02</div>
+    <h2>Nothing here is medical advice</h2>
+    <p>All content, data, coaching, insights, recommendations, and outputs generated by DrRuby — whether from our AI, our scientific advisors, or our platform — are for <strong>informational and educational purposes only</strong>.</p>
+    <p>No content provided by DrRuby constitutes or should be construed as:</p>
+    <ul>
+      <li>Medical advice, diagnosis, or treatment</li>
+      <li>A substitute for professional medical consultation</li>
+      <li>A clinical recommendation from a licensed physician</li>
+      <li>Endorsement of any specific medical intervention</li>
+    </ul>
+    <p>Always seek the advice of your physician, dermatologist, or other qualified healthcare provider with any questions you may have regarding a medical condition, before starting any new health regimen, or before making changes to an existing one.</p>
+  </div>
+
+  <!-- 3. WHAT WE DO AND DON'T DO -->
+  <div class="section-block">
+    <div class="section-num">Section 03</div>
+    <h2>What DrRuby does — and doesn't do</h2>
+    <div class="boundary-grid">
+      <div class="boundary-card not">
+        <div class="boundary-label">We do not</div>
+        <ul>
+          <li>Diagnose any medical condition</li>
+          <li>Prescribe or recommend medications</li>
+          <li>Replace your doctor or dermatologist</li>
+          <li>Provide clinical treatment plans</li>
+          <li>Make disease-related claims</li>
+          <li>Interpret lab results or medical imaging</li>
+        </ul>
+      </div>
+      <div class="boundary-card yes">
+        <div class="boundary-label">We do</div>
+        <ul>
+          <li>Track longitudinal skin biomarkers over time</li>
+          <li>Provide wellness coaching and education</li>
+          <li>Share peer-reviewed science accessibly</li>
+          <li>Help you ask better questions for your doctor</li>
+          <li>Observe patterns and flag changes for awareness</li>
+          <li>Connect you to licensed clinicians when needed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. LANGUAGE WE USE -->
+  <div class="section-block">
+    <div class="section-num">Section 04</div>
+    <h2>How we communicate findings</h2>
+    <p>We are deliberate about the language we use. DrRuby observes and tracks — we do not diagnose or prescribe. Here are examples of how this shows up in practice:</p>
+    <div class="lang-examples">
+      <div class="lang-row">
+        <div class="lang-no"><span class="lang-tag">We don't say</span>"You have inflammation."</div>
+        <div class="lang-yes"><span class="lang-tag">We say</span>"Your Inflammation Index has increased 12% over 4 weeks. We recommend discussing this with your dermatologist."</div>
+      </div>
+      <div class="lang-row">
+        <div class="lang-no"><span class="lang-tag">We don't say</span>"This supplement will fix your collagen."</div>
+        <div class="lang-yes"><span class="lang-tag">We say</span>"Your Collagen Proxy shows a positive trend since adding this supplement. Consult your physician before making changes."</div>
+      </div>
+      <div class="lang-row">
+        <div class="lang-no"><span class="lang-tag">We don't say</span>"You are in perimenopause."</div>
+        <div class="lang-yes"><span class="lang-tag">We say</span>"Your patterns are consistent with hormonal transition. We strongly recommend speaking with your OB/GYN or a women's health specialist."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CONSULT A DOCTOR -->
+  <div class="section-block">
+    <div class="section-num">Section 05</div>
+    <h2>We always recommend consulting a doctor</h2>
+    <p>DrRuby is designed to complement — not replace — your relationship with your healthcare providers. We actively encourage every user to:</p>
+    <ul>
+      <li>Maintain a regular relationship with a primary care physician</li>
+      <li>Consult a board-certified dermatologist for skin concerns</li>
+      <li>Work with a women's health specialist for hormonal and perimenopause-related questions</li>
+      <li>Bring DrRuby data and trends to their clinical appointments as a conversation starter</li>
+    </ul>
+    <p>If any insight from DrRuby raises concern, <strong>please contact a qualified healthcare professional promptly</strong>. Do not delay seeking medical care because of anything you have read or observed on this platform.</p>
+  </div>
+
+  <!-- 6. DATA & PRIVACY -->
+  <div class="section-block">
+    <div class="section-num">Section 06</div>
+    <h2>Your data and privacy</h2>
+    <p>DrRuby collects wellness and behavioral data to power longitudinal tracking and coaching. We do not sell your personal data to third parties. We handle all data in accordance with applicable privacy laws including CCPA.</p>
+    <p>Your skin imaging data, health inputs, and personal information are stored securely and used solely to provide and improve your DrRuby experience. A full Privacy Policy is available at <a href="#" style="color: var(--red);">drruby.ai/privacy</a>.</p>
+  </div>
+
+  <!-- 7. SCIENTIFIC ADVISORS -->
+  <div class="section-block">
+    <div class="section-num">Section 07</div>
+    <h2>About our scientific advisors</h2>
+    <p>DrRuby works with leading scientists and clinicians who contribute to our research framework and product development. Their involvement does not constitute an endorsement of any specific health outcome for any individual user, and does not create a physician-patient relationship between any advisor and any DrRuby user.</p>
+    <p>All scientific content on DrRuby is grounded in peer-reviewed research. References are available upon request.</p>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="sig-block">
+    <div class="sig-left">
+      <p><strong>DrRuby.ai</strong><br>
+      ruby@drruby.ai<br>
+      Questions about this disclaimer? Contact us directly.</p>
+    </div>
+    <div class="sig-date">
+      Effective date<br>June 2026<br><br>
+      Version 1.0
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Dr<span>Ruby</span>.ai</div>
+  <div>© 2026 DrRuby.ai · Wellness device. Not intended to diagnose or treat any medical condition.</div>
+</footer>
+
+</body>
+</html>
